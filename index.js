@@ -13,25 +13,13 @@ function wrapAdjective (param2 = "*") {
     return innerfunction
 }
 
-
-
-function subtract (num1, num2) {
-    return num1-num2
-}
-
-function multiply (num1, num2) {
-    return num1*num2
-}
-
-const divide = function (num1, num2) {
-    return num1/num2
-}
 const Calculator = {add: () =>  1+3, subtract:() =>  1-3, multiply:() =>  1*3, divide:() => 10/5}
     
-const actionApplyer = function (int, arrayOfFunctions){
-        if (arrayOfFunctions.length === 0) {
-            return int
-        } else {
-            return (int*2+1000)%7
-        }        
+const actionApplyer = function (start, ray){
+    let a = start
+
+    ray.forEach(element => { a = element(a)        
+    });
+      
+    return a     
     } 
